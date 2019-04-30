@@ -1,5 +1,8 @@
 pipeline {
     agent any
+ tools {
+        maven 'maven_3.5.3'
+    }
     
     stages {
 /*        stage('Init') {
