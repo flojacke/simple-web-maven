@@ -17,7 +17,7 @@ pipeline {
                 echo "Code deployed"
             }
         }*/
-         stage('Build') {
+          stage('Build') {
             steps {
                bat 'mvn clean package'
             } 
@@ -27,6 +27,11 @@ pipeline {
                      archiveArtifacts artifacts:'**/target/*.war'
                  }
              }
-        }  
+        }
+        stage(Deploy to Staging') {
+            steps {
+              buid job: 'deploy-to-staging'
+            } 
+      }   
     } 
  }
