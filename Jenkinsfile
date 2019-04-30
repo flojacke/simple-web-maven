@@ -20,9 +20,7 @@ pipeline {
          stage('Build') {
             steps {
                bat'mvn clean package'
-            } {
-                echo 'Now Archiving...'
-                
+            } 
              post {
                  success {
                      echo 'Now Archiving...'
